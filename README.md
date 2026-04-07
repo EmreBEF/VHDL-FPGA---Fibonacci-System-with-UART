@@ -55,7 +55,7 @@ The system is composed of the following blocks:
 - VHDL
 - Intel Quartus
 - ModelSim
-- FPGA (Cyclone V / DE2 board)
+- FPGA (Cyclone V GX Starter Kit)
 
 ## Validation
 - Functional simulation (ModelSim)
