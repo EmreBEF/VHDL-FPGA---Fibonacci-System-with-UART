@@ -1,0 +1,108 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 10:32:05  March 23, 2026
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		PROJET_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CGXFC5C6F27C7
+set_global_assignment -name TOP_LEVEL_ENTITY Assemblage_V4
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:32:05  MARCH 23, 2026"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name VHDL_FILE seven_seg.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE tb_PROJET.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VHDL_FILE Fibo_carry.vhd
+set_global_assignment -name VHDL_FILE Assemblage_V1.vhd
+set_location_assignment PIN_AC9 -to N[0]
+set_location_assignment PIN_AE10 -to N[1]
+set_location_assignment PIN_AD13 -to N[2]
+set_location_assignment PIN_AC8 -to N[3]
+set_location_assignment PIN_W11 -to N[4]
+set_location_assignment PIN_AB10 -to N[5]
+set_location_assignment PIN_V10 -to N[6]
+set_location_assignment PIN_AC10 -to N[7]
+set_location_assignment PIN_P11 -to RAZ
+set_location_assignment PIN_U20 -to centaine[2]
+set_location_assignment PIN_F7 -to Carry
+set_location_assignment PIN_V19 -to unite[0]
+set_location_assignment PIN_V18 -to unite[1]
+set_location_assignment PIN_V17 -to unite[2]
+set_location_assignment PIN_W18 -to unite[3]
+set_location_assignment PIN_Y20 -to unite[4]
+set_location_assignment PIN_Y19 -to unite[5]
+set_location_assignment PIN_Y18 -to unite[6]
+set_location_assignment PIN_AA18 -to dizaine[0]
+set_location_assignment PIN_AD26 -to dizaine[1]
+set_location_assignment PIN_AB19 -to dizaine[2]
+set_location_assignment PIN_AE26 -to dizaine[3]
+set_location_assignment PIN_AE25 -to dizaine[4]
+set_location_assignment PIN_AC19 -to dizaine[5]
+set_location_assignment PIN_AF24 -to dizaine[6]
+set_location_assignment PIN_AD7 -to centaine[0]
+set_location_assignment PIN_AD6 -to centaine[1]
+set_location_assignment PIN_V22 -to centaine[3]
+set_location_assignment PIN_V20 -to centaine[4]
+set_location_assignment PIN_W21 -to centaine[5]
+set_location_assignment PIN_W20 -to centaine[6]
+set_location_assignment PIN_Y24 -to millier[0]
+set_location_assignment PIN_Y23 -to millier[1]
+set_location_assignment PIN_AA23 -to millier[2]
+set_location_assignment PIN_AA22 -to millier[3]
+set_location_assignment PIN_AC24 -to millier[4]
+set_location_assignment PIN_AC23 -to millier[5]
+set_location_assignment PIN_AC22 -to millier[6]
+set_location_assignment PIN_R20 -to CLK
+set_global_assignment -name VHDL_FILE CADENCE_1HZ.vhd
+set_global_assignment -name VHDL_FILE Assemblage_V2.vhd
+set_global_assignment -name VHDL_FILE CADENCE_9600.vhd
+set_global_assignment -name VHDL_FILE BaudGen.vhd
+set_global_assignment -name VHDL_FILE USART.vhd
+set_global_assignment -name VHDL_FILE Assemblage_V3.vhd
+set_location_assignment PIN_AE19 -to VITESSE
+set_location_assignment PIN_L9 -to TxD
+set_location_assignment PIN_P12 -to StartTr
+set_global_assignment -name VHDL_FILE BCD_converter.vhd
+set_global_assignment -name VHDL_FILE Assemblage_V4.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

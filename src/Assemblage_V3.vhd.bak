@@ -1,0 +1,62 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use WORK.ALL;
+
+ENTITY Assemblage_V3 IS
+	PORT(
+			RAZ,CLK: IN STD_LOGIC;
+			N: IN STD_LOGIC_VECTOR(7 downto 0);
+			unite: out STD_LOGIC_VECTOR(6 downto 0);
+			dizaine: out STD_LOGIC_VECTOR(6 downto 0);
+			centaine: out STD_LOGIC_VECTOR(6 downto 0);
+			millier: out STD_LOGIC_VECTOR(6 downto 0);
+			Carry: out STD_LOGIC );
+	END Assemblage_V2;
+	
+ARCHITECTURE structur OF Assemblage_V3 IS
+
+	SIGNAL data : STD_LOGIC_vector (15 downto 0);
+	SIGNAL Enable : std_logic;
+
+COMPONENT Fibo_carry
+		port( 
+				Clk : in std_logic;
+				Raz : in std_logic; -- Reset du circuit
+				EN : in std_logic; -- Validation du circuit
+				N : in std_logic_vector (7 downto 0); -- nombre de terme a generer
+				Suite : out std_logic_vector (15 downto 0); -- sortie du generateur de nombre
+				Carry_flag : out std_logic );
+END COMPONENT;
+
+COMPONENT seven_seg
+		PORT(
+				in4 : in std_logic_vector (3 downto 0); -- nombre binaire d'entre
+				seg7 : out std_logic_vector (0 to 6) 
+			 ); -- code 7 segment
+END COMPONENT;
+
+COMPONENT CADENCE_1HZ
+		port(
+				CLK : in std_logic;
+				RAZ : in std_logic;
+				SORTIE : out std_logic
+			 );
+			 
+COMPONENT BaudGen
+		port(
+				CLK     : in  std_logic;
+				VITESSE : in  std_logic;
+				BaudEn  : out std_logic
+			 );
+			 
+END COMPONENT;
+
+BEGIN -- description structurelle
+ fib1: Fibo_carry PORT MAP (Clk => Clk,Raz=> Raz,EN=> Enable,N=> N,Suite=> data,Carry_flag => Carry);
+ cadence: CADENCE_1HZ PORT MAP (CLK => CLK, RAZ=> RAZ, SORTIE => Enable);
+ dec_0: seven_seg PORT MAP (data(3 downto 0),unite);
+ dec_1: seven_seg PORT MAP (data(7 downto 4),dizaine);
+ dec_2: seven_seg PORT MAP (data(11 downto 8),centaine);
+ dec_3: seven_seg PORT MAP (data(15 downto 12),millier);
+ 
+END structur;

@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use WORK.ALL;
+
+ENTITY seven_seg IS
+PORT(
+in8 : in std_logic_vector (3 downto 0); -- nombre binaire d'entre
+ seg7 : out std_logic_vector (0 to 6) -- code 7 segment
+ );
+END seven_seg;
+
+ARCHITECTURE behavioral OF seven_seg IS
+BEGIN
+PROCESS (in4)
+variable seg :std_logic_vector (6 downto 0); -- code 7 segment
+BEGIN
+	case in4 is
+		when "0000" => seg7 <= "0000000";
+		when "0001" => seg7 <= "0000110";
+		when "0010" => seg7 <= "1011011";
+		when "0011" => seg7 <= "1001101";
+		when "0100" => seg7 <= "1100110";
+		when "0101" => seg7 <= "1101101";
+		when "0110" => seg7 <= "1111101";
+		when "0111" => seg7 <= "0000111";
+		when "1000" => seg7 <= "1111111";
+		when "1001" => seg7 <= "1101111";
+
+END
