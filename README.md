@@ -1,4 +1,4 @@
-# VHDL FPGA – Fibonacci System with UART
+# VHDL FPGA - Fibonacci System with UART
 
 ## Overview
 This project implements a complete digital system on FPGA using VHDL (Intel Quartus).
